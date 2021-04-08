@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 const SearchForm = (props) => {
   return (
     <div className={props.classNam}>
       <h2>Mobile Shop Application</h2>
-      <button id="add-new-mob">Add New mobile</button>
+      <Link id="add-new-mob" to="/add-new-phone">
+        Add New mobile
+      </Link>
       <form>
         <label>Model</label>
         <input type="text" id="model-name" />

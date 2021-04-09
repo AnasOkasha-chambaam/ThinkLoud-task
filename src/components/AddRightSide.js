@@ -13,13 +13,13 @@ function AddrightSide() {
       </span>
       <span className="a-col">Screen</span>
       <span className="choices a-col">
-        <input type="radio" name="the-screen" id="_4inch" />
+        <input type="radio" name="the-screen" id="_4inch" value="4" />
         <label for="_4inch">4"</label>
 
-        <input type="radio" name="the-screen" id="_5inch" />
+        <input type="radio" name="the-screen" id="_5inch" value="5" />
         <label for="_5inch">5"</label>
 
-        <input type="radio" name="the-screen" id="_6inch" />
+        <input type="radio" name="the-screen" id="_6inch" value="6" />
         <label for="_6inch">6"</label>
       </span>
       <span className="a-col">Color</span>

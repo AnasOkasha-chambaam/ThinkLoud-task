@@ -10,16 +10,17 @@ const SearchForm = (props) => {
         <label>Model</label>
         <input type="text" id="model-name" />
         <label>brand</label>
-        <select>
+        <select defaultValue="samsung">
           {/* add it dynamically */}
           <option value="nokia">Nokia</option>
-          <option value="samsung" selected>
-            Samsung
-          </option>
+          <option value="samsung">Samsung</option>
           <option value="apple">Apple</option>
           <option value="sony">Sony</option>
+          <option value="sony">LG</option>
         </select>
-        <input type="submit" />
+        <span>
+          <input type="submit" value="search" />
+        </span>
       </form>
     </div>
   );

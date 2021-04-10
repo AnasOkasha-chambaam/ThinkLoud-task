@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 const RightCharts = ({ classNam, phones, setPhones }) => {
   let years = {},
     totalCo = phones.length;
@@ -28,7 +29,7 @@ const RightCharts = ({ classNam, phones, setPhones }) => {
                 style={{ width: (years[one] / totalCo) * 100 + "%" }}
               >
                 <span className="after">{years[one]}</span>
-                <span className="before">one</span>
+                <span className="before">{one}</span>
               </li>
             );
           })}
@@ -44,8 +45,35 @@ const RightCharts = ({ classNam, phones, setPhones }) => {
         </ul>
       </div>
       <div className="circle-chart-container">
-        <svg width="240px" height="240px">
+        <svg width="240px" height="240px" datattl={totalCo}>
           {/* <circle cx="400px" cy="400px" r="350px" fill="black" /> */}
+          {Object.keys(brands).map((oneF, ind) => {
+            console.log((ind / Object.keys(brands).length) * 255);
+            return (
+              <circle
+                key={oneF}
+                dataamount={brands[oneF]}
+                className={"a-strib " + oneF}
+                cx="120px"
+                cy="120px"
+                r="50px"
+                fill="transparent"
+                stroke={
+                  "rgb(" +
+                  (ind / Object.keys(brands).length) * 0 +
+                  "," +
+                  (ind / Object.keys(brands).length) * 255 +
+                  "," +
+                  (ind / Object.keys(brands).length) * 0 +
+                  ")"
+                }
+                strokeWidth="100px"
+                opacity="1"
+              >
+                <text className="after">{oneF}</text>
+              </circle>
+            );
+          })}
 
           {/* <circle
             className="a-strib"
@@ -68,6 +96,31 @@ const RightCharts = ({ classNam, phones, setPhones }) => {
             strokeDasharray="10px"
           /> */}
         </svg>
+        <div className="char-cheet-sheet">
+          <ul>
+            {Object.keys(brands).map((oneF, ind) => {
+              console.log((ind / Object.keys(brands).length) * 255);
+              return (
+                <li style={{ marginBottom: "9px" }}>
+                  <span
+                    style={{
+                      backgroundColor: `rgb(${
+                        (ind / Object.keys(brands).length) * 0
+                      },${(ind / Object.keys(brands).length) * 255},${
+                        (ind / Object.keys(brands).length) * 0
+                      })`,
+                      width: "3px",
+                      height: "3px",
+                      padding: "3px",
+                      marginLeft: "2px",
+                    }}
+                  ></span>
+                  {oneF}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -189,3 +189,10 @@ li {
   justify-content: center;
   align-items: center;
 }
+
+.a-strib {
+  position: relative;
+}
+.a-strib .after {
+  font-size: 2000px;
+}

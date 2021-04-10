@@ -8,9 +8,11 @@ function App() {
   const [phones, setPhones] = useState([
     new Phone(0, "Nokia", "6600", 2008, 16, [true, false, false], 4, "black"),
     new Phone(1, "Samsung", "s6", 2019, 32, [(true, true, true)], 5, "white"),
-    new Phone(2, "Apple", "iphone4", 2008, 64, [true, true, false], 4, "black"),
     new Phone(3, "Sony", "Z2", 2009, 128, [true, false, true], 6, "gold"),
+    new Phone(4, "Sony", "Z3", 2002, 32, [true, false, true], 6, "white"),
+    new Phone(2, "Apple", "iphone4", 2008, 64, [true, true, false], 4, "black"),
   ]);
+
   return (
     <div className="App container">
       {/* <h1>Hi From REACT JS</h1> */}

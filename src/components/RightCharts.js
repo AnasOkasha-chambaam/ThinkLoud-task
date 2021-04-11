@@ -24,6 +24,7 @@ const RightCharts = ({ classNam, phones, setPhones }) => {
           {Object.keys(years).map((one) => {
             return (
               <li
+                key={one}
                 className="bar"
                 data_number={years[one]}
                 style={{ width: (years[one] / totalCo) * 100 + "%" }}
@@ -48,7 +49,6 @@ const RightCharts = ({ classNam, phones, setPhones }) => {
         <svg width="240px" height="240px" datattl={totalCo}>
           {/* <circle cx="400px" cy="400px" r="350px" fill="black" /> */}
           {Object.keys(brands).map((oneF, ind) => {
-            console.log((ind / Object.keys(brands).length) * 255);
             return (
               <circle
                 key={oneF}
@@ -99,7 +99,6 @@ const RightCharts = ({ classNam, phones, setPhones }) => {
         <div className="char-cheet-sheet">
           <ul>
             {Object.keys(brands).map((oneF, ind) => {
-              console.log((ind / Object.keys(brands).length) * 255);
               return (
                 <li style={{ marginBottom: "9px" }}>
                   <span

@@ -1,4 +1,10 @@
-const PhonesList = ({ classNam, phones, setPhones }) => {
+const PhonesList = ({
+  classNam,
+  phones,
+  setPhones,
+  setActivePhone,
+  activePhone,
+}) => {
   return (
     <div className={classNam}>
       <span className="record">
@@ -18,7 +24,19 @@ const PhonesList = ({ classNam, phones, setPhones }) => {
       {phones.map((one) => {
         return (
           <span
-            className={"record" + " " + (one.id === 2 ? "active" : " ")}
+            onClick={function (e) {
+              // for Phone List
+              if (document.querySelector(".record.active")) {
+                document
+                  .querySelector(".record.active")
+                  .classList.remove("active");
+              }
+              setActivePhone([one.id + 1]);
+              e.target.parentElement.classList.add("active");
+            }}
+            className={
+              "record " + (one.id === activePhone[0] - 1 ? "active" : " ")
+            }
             key={"info-" + one.id}
             id={"id-info-" + one.id}
           >

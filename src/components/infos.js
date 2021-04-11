@@ -14,6 +14,8 @@ const LeftSide = (props) => {
         classNam="phone-list"
         phones={props.phones}
         setPhones={props.setPhones}
+        activePhone={props.activePhone}
+        setActivePhone={props.setActivePhone}
       />
       <PhoneData
         setActivePhone={props.setActivePhone}

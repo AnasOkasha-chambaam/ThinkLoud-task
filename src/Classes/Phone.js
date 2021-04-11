@@ -1,4 +1,5 @@
-export default class Phone {
+import react from "react";
+export default class Phone extends react.Component {
   constructor(
     id,
     brand,
@@ -9,6 +10,7 @@ export default class Phone {
     screen,
     color
   ) {
+    super();
     this.id = id;
     this.model = model;
     this.year = manufacture_year;
@@ -17,5 +19,27 @@ export default class Phone {
     this.other_specs = other_specs;
     this.screen_size = screen;
     this.color = color;
+  }
+  componentDidMount() {
+    // for charts
+    let rotationValue = 0;
+    document.querySelectorAll(".a-strib").forEach((one) => {
+      let ttlL = one.getTotalLength();
+      one.style.strokeDasharray = ttlL;
+      one.style.strokeDashoffset =
+        (1 -
+          +one.getAttribute("dataamount") /
+            one.parentElement.getAttribute("datattl")) *
+        ttlL;
+      one.style.transformOrigin = "center";
+      one.style.transform = `rotate(${rotationValue}deg)`;
+      rotationValue +=
+        (+one.getAttribute("dataamount") /
+          one.parentElement.getAttribute("datattl")) *
+        360;
+    });
+  }
+  render() {
+    return <react.Fragment></react.Fragment>;
   }
 }

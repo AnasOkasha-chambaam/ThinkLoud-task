@@ -2,13 +2,16 @@ function PhoneData({ phones, activePhone, setActivePhone }) {
   if (activePhone[0]) {
     let currentPhone;
     phones.forEach((element) => {
-      if (element.id === activePhone[0]) {
+      if (element.id === activePhone[0] - 1) {
         currentPhone = element;
       }
     });
     return (
       <div className="phone-data">
-        <ul style={{ padding: "0 80px", background: "#f4f4f4" }}>
+        <ul
+          id="phone-data"
+          style={{ padding: "0 80px", background: "#f4f4f4" }}
+        >
           <li
             style={{
               fontSize: "20px",
